@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaUserEdit } from 'react-icons/fa'; // Import FontAwesome user edit icon
 import { LuConstruction } from 'react-icons/lu';
 import { MdSettings } from 'react-icons/md'; // Import Material Design settings icon
-import Image404URL from '/src/assets/404.webp';
+import Image404URL from '/src/assets/404.gif';
 
 // Define the interface for preferences
 interface Preferences {
