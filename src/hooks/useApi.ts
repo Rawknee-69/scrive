@@ -1,11 +1,5 @@
 import axios from 'axios';
 import { getSeason } from './useSeason';
-const express = require('express');
-const cors = require('cors');
-const app = express();
-
-// Use cors middleware
-app.use(cors());
 
 // Utility function to ensure URL ends with a slash
 function ensureUrlEndsWithSlash(url: string): string {
