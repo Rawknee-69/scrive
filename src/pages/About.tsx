@@ -40,17 +40,17 @@ const MainContent = styled.div`
 const sections = [
   {
     title: 'About',
-    title2: "What's Miruro?",
+    title2: "What's Scrive?",
     content: (
       <Paragraph>
-        Miruro is an anime streaming site where you can watch anime online in HD
+        Scrive is an anime streaming site where you can watch anime online in HD
         quality with English subtitles or dubbing. You can also download any
         anime you want without registration.
       </Paragraph>
     ),
   },
   {
-    title2: 'Is Miruro safe?',
+    title2: 'Is Scrive safe?',
     content: (
       <Paragraph>
         Yes. We started this site to improve UX and are committed to keeping our
@@ -61,7 +61,7 @@ const sections = [
     ),
   },
   {
-    title2: 'Why Miruro?',
+    title2: 'Why Scrive?',
     content: (
       <>
         <Paragraph>
@@ -88,7 +88,7 @@ const sections = [
           <Keyword>simplicity and ease of use</Keyword>.
         </Paragraph>
         <Paragraph>
-          <strong>Device Compatibility:</strong> Miruro works seamlessly on both{' '}
+          <strong>Device Compatibility:</strong> Scrive works seamlessly on both{' '}
           <Keyword>desktop and mobile devices</Keyword>.
         </Paragraph>
         <Paragraph>

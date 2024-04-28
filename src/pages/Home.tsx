@@ -213,7 +213,7 @@ const Home = () => {
   }, [itemsCount]);
 
   useEffect(() => {
-    document.title = `Miruro | Watch HD Anime for Free`;
+    document.title = `Scrive | Watch FHD Anime for Free`;
   }, [activeTab]);
 
   useEffect(() => {

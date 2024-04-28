@@ -122,36 +122,36 @@ export function Footer() {
             <FooterLink to='/pptos' title='Privacy Policy and Terms of Service'>
               Privacy & ToS
             </FooterLink>
-            <FooterLink to='https://ko-fi.com/yourdev' title='Donate to Us'>
+            <FooterLink to='/' title='Donate to Us'>
               Donate {'<3'}
             </FooterLink>
           </StyledLinkList>
         </FooterBaseContainer>
         <FooterBaseContainer aria-label='Sub Footer' $isSub={true}>
           <Text as='p' $isSub={true}>
-            &copy; {new Date().getFullYear()} miruro.tv | Website Made by{' '}
-            <strong>Miruro no Kuon</strong>
+            &copy; {new Date().getFullYear()} Scrive.to | Website Made by{' '}
+            <strong>Rawknee.69</strong>
           </Text>
           <nav aria-label='Social Links'>
             <SocialIconsWrapper>
               {[
                 {
-                  href: 'https://twitter.com/miruro_official',
+                  href: '/',
                   Icon: FaTwitter,
                   label: 'Twitter',
                 },
                 {
-                  href: 'https://discord.gg/4kfypZ96K4',
+                  href: 'https://discord.gg/3H4XE7VAjN',
                   Icon: FaDiscord,
                   label: 'Discord',
                 },
                 {
-                  href: 'https://github.com/Miruro-no-kuon/Miruro',
+                  href: 'https://github.com/Rawknee-69/',
                   Icon: FaGithub,
                   label: 'GitHub',
                 },
                 {
-                  href: 'https://www.reddit.com/r/miruro',
+                  href: '/',
                   Icon: FaReddit,
                   label: 'Reddit',
                 },
@@ -161,7 +161,7 @@ export function Footer() {
                   href={href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`Miruro on ${label}`}
+                  aria-label={`Scrive.to on ${label}`}
                 >
                   <Icon aria-hidden='true' />
                 </ShareButton>

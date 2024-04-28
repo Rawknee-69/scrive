@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import Image404URL from '/src/assets/404.webp';
+import Image404URL from '/src/assets/404.gif';
 
 const FadeIn = keyframes`
   0% { opacity: 0.4; }

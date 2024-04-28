@@ -78,7 +78,7 @@ const sections = [
         <strong>Contact Us</strong>: If you have any questions about these
         terms, please contact us at{' '}
         <StyledLink href='mailto:miruro@proton.me'>
-          miruro@proton.me.
+          Rawknee.6069@gmail.com
         </StyledLink>
       </Paragraph>
     ),

@@ -93,7 +93,7 @@ const Search = () => {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = query ? `${query} - Miruro` : 'Miruro';
+    document.title = query ? `${query} - Scrive` : 'Scrive';
     return () => {
       document.title = previousTitle;
     };

@@ -653,17 +653,17 @@ const Watch: React.FC = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [episodes, currentEpisode, handleEpisodeSelect, lastKeypressTime]);
 
-  //SET PAGE TITLE TO MIRURO + ANIME TITLE
+  //SET PAGE TITLE TO Scrive + ANIME TITLE
   useEffect(() => {
     if (animeInfo && animeInfo.title) {
       document.title =
-        'Miruro | ' +
+        'Scrive | ' +
         (animeInfo.title.english ||
           animeInfo.title.romaji ||
           animeInfo.title.romaji ||
           '');
     } else {
-      document.title = 'Miruro';
+      document.title = 'Scrive';
     }
   }, [animeInfo]);
 
