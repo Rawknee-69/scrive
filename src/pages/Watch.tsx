@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaBell } from 'react-icons/fa';
 import styled from 'styled-components';
-import Image404URL from '/src/assets/404.webp';
+import Image404URL from '/src/assets/404.gif';
 import {
   EpisodeList,
   Player,
