@@ -227,6 +227,7 @@ export async function fetchAdvancedSearch(
     queryParams.set('genres', JSON.stringify(options.genres));
   }
   const url = `${BASE_URL}meta/anilist/advanced-search?${queryParams.toString()}`;
+  console.log(url)
   const cacheKey = generateCacheKey('advancedSearch', queryParams.toString());
 
   return fetchFromProxy(url, advancedSearchCache, cacheKey);
@@ -239,6 +240,7 @@ export async function fetchAnimeData(
 ) {
   const params = new URLSearchParams({ provider });
   const url = `${BASE_URL}meta/anilist/data/${animeId}?${params.toString()}`;
+  console.log(url)
   const cacheKey = generateCacheKey('animeData', animeId, provider);
 
   return fetchFromProxy(url, animeDataCache, cacheKey);
@@ -251,6 +253,7 @@ export async function fetchAnimeInfo(
 ) {
   const params = new URLSearchParams({ provider });
   const url = `${BASE_URL}meta/anilist/info/${animeId}?${params.toString()}`;
+  console.log(url)
   const cacheKey = generateCacheKey('animeInfo', animeId, provider);
 
   return fetchFromProxy(url, animeInfoCache, cacheKey);
@@ -279,6 +282,7 @@ async function fetchList(
       perPage.toString(),
     );
     url = `${BASE_URL}meta/anilist/${type.toLowerCase()}`;
+    
 
     if (type === 'TopRated') {
       options = {
