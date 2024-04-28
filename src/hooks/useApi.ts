@@ -20,13 +20,20 @@ const SKIP_TIMES = ensureUrlEndsWithSlash(
   import.meta.env.VITE_SKIP_TIMES as string,
 );
 
+const PROXY_URL = ensureUrlEndsWithSlash(
+  import.meta.env.VITE_PROXY_URL as string,
+);
+
 // Creating axios instance with proxy server base URL
+const PROXY_SERVER_BASE_URL = `${PROXY_URL}api/json`;
 
 // Axios instance
 const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: PROXY_SERVER_BASE_URL,
   timeout: 10000,
 });
+
+
 
 // Error handling function
 // Function to handle errors and throw appropriately
