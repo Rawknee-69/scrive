@@ -172,7 +172,10 @@ async function fetchFromProxy(url: string, cache: any, cacheKey: string) {
     }
 
     // Proceed with the network request if no cached response is found
-    const response = await axiosInstance.get('', { params: { url } }); // Adjust based on how the proxy expects to receive the original URL
+    const response = await axiosInstance.get('', { params: { url } });
+
+    console.log(response)
+    // Adjust based on how the proxy expects to receive the original URL
 
     // After obtaining the response, verify it for errors or empty data as before
     if (
