@@ -18,7 +18,7 @@ const PROXY_URL = ensureUrlEndsWithSlash(
 );
 
 // Creating axios instance with proxy server base URL
-const PROXY_SERVER_BASE_URL = `${PROXY_URL}api/json`;
+const PROXY_SERVER_BASE_URL = `${PROXY_URL}`;
 
 // Axios instance
 const axiosInstance = axios.create({
