@@ -1,5 +1,11 @@
 import axios from 'axios';
 import { getSeason } from './useSeason';
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+// Use cors middleware
+app.use(cors());
 
 // Utility function to ensure URL ends with a slash
 function ensureUrlEndsWithSlash(url: string): string {
@@ -13,16 +19,12 @@ const BASE_URL = ensureUrlEndsWithSlash(
 const SKIP_TIMES = ensureUrlEndsWithSlash(
   import.meta.env.VITE_SKIP_TIMES as string,
 );
-const PROXY_URL = ensureUrlEndsWithSlash(
-  import.meta.env.VITE_PROXY_URL as string,
-);
 
 // Creating axios instance with proxy server base URL
-const PROXY_SERVER_BASE_URL = `${PROXY_URL}api/json`;
 
 // Axios instance
 const axiosInstance = axios.create({
-  baseURL: PROXY_SERVER_BASE_URL,
+  baseURL: BASE_URL,
   timeout: 10000,
 });
 
