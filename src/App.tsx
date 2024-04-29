@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react"
 import {
   Profile,
   Navbar,
@@ -41,6 +42,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
+        <Analytics/>
       </ThemeProvider>
     </Router>
   );
