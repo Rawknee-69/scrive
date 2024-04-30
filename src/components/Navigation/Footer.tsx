@@ -119,7 +119,7 @@ export function Footer() {
             <FooterLink to='/about' title='About Us'>
               About
             </FooterLink>
-            <FooterLink to='/pptos' title='Privacy Policy and Terms of Service'>
+            <FooterLink to='/privacy&policy' title='Privacy Policy and Terms of Service'>
               Privacy & ToS
             </FooterLink>
             <FooterLink to='/' title='Donate to Us'>
