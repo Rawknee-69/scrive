@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaReddit, FaDiscord, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaDiscord, FaTwitter, FaGithub , FaInstagram} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const PageWrapper = styled.div`
@@ -129,14 +129,14 @@ export function Footer() {
         </FooterBaseContainer>
         <FooterBaseContainer aria-label='Sub Footer' $isSub={true}>
           <Text as='p' $isSub={true}>
-            &copy; {new Date().getFullYear()} Scrive.to | Website Made by{' '}
+            &copy; {new Date().getFullYear()} Scrive.vercel.to | Website Made by{' '}
             <strong>Rawknee.69</strong>
           </Text>
           <nav aria-label='Social Links'>
             <SocialIconsWrapper>
               {[
                 {
-                  href: '/',
+                  href: 'https://twitter.com/Scrive_to',
                   Icon: FaTwitter,
                   label: 'Twitter',
                 },
@@ -151,10 +151,11 @@ export function Footer() {
                   label: 'GitHub',
                 },
                 {
-                  href: '/',
-                  Icon: FaReddit,
-                  label: 'Reddit',
+                  href: 'https://instagram.com/Rawknee.69/',
+                  Icon: FaInstagram,
+                  label: 'Instagram',
                 },
+
               ].map(({ href, Icon, label }) => (
                 <ShareButton
                   key={href}
