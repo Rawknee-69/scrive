@@ -37,7 +37,7 @@ function App() {
             />
             <Route path='/profile' element={<Profile />} />
             <Route path='/about' element={<About />} />
-            <Route path='/pptos' element={<PolicyTerms />} />
+            <Route path='/privacy&policy' element={<PolicyTerms />} />
             <Route path='*' element={<Page404 />} />
           </Routes>
         </div>
