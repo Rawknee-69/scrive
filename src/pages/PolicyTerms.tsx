@@ -46,7 +46,7 @@ const sections = [
     content: (
       <Paragraph>
         <strong>Data Collection</strong>: We collect minimal user data necessary
-        for the functioning of Scribe, such as account information and user
+        for the functioning of Scrive, such as account information and user
         preferences.
         <br></br>
         <br></br>
@@ -55,7 +55,7 @@ const sections = [
         third parties except as required by law.
         <br></br>
         <br></br>
-        <strong>Cookies and Tracking</strong>: Scribe uses cookies and similar
+        <strong>Cookies and Tracking</strong>: Scrive uses cookies and similar
         tracking technologies to enhance the user experience like caching video
         timestamps and tracking watched content.
         <br></br>
@@ -87,12 +87,12 @@ const sections = [
     title: 'Terms of Service',
     content: (
       <Paragraph>
-        <strong>Acceptance of Terms</strong>: By using Scribe, you agree to
+        <strong>Acceptance of Terms</strong>: By using Scrive, you agree to
         these Terms of Service and acknowledge that they affect your legal
         rights and obligations.
         <br></br>
         <br></br>
-        <strong>Content</strong>: Scribe does not host video content but embeds
+        <strong>Content</strong>: Scrive does not host video content but embeds
         videos from various third-party sources. We are not responsible for the
         content, quality, or the policies of these external sites.
         <br></br>
@@ -108,7 +108,7 @@ const sections = [
         <br></br>
         <br></br>
         <strong>Intellectual Property</strong>: The intellectual property rights
-        of the embedded videos remain with their respective owners. Scribe
+        of the embedded videos remain with their respective owners. Scrive
         respects these rights and does not claim ownership of this content.
         <br></br>
         <br></br>
