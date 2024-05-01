@@ -78,7 +78,7 @@ const sections = [
         <strong>Contact Us</strong>: If you have any questions about these
         terms, please contact us at{' '}
         <StyledLink href='mailto:Rawknee.6069@gmail.com'>
-          Rawknee.6069@gmail.com
+          Scrive.
         </StyledLink>
       </Paragraph>
     ),
@@ -128,7 +128,7 @@ const sections = [
 function PolicyTerms() {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = 'Policy & Terms'; // Set the title when the component mounts
+    document.title = 'Policy & Terms | Scrive'; // Set the title when the component mounts
     return () => {
       // Reset the title to the previous one when the component unmounts
       document.title = previousTitle;

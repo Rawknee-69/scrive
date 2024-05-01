@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getSeason } from './useSeason';
+import { year, getCurrentSeason, getNextSeason } from '../index';
 
 // Utility function to ensure URL ends with a slash
 function ensureUrlEndsWithSlash(url: string): string {
@@ -18,7 +18,7 @@ const PROXY_URL = ensureUrlEndsWithSlash(
 );
 
 // Creating axios instance with proxy server base URL
-const PROXY_SERVER_BASE_URL = `${PROXY_URL}`;
+const PROXY_SERVER_BASE_URL = `${PROXY_URL}api/json`;
 
 // Axios instance
 const axiosInstance = axios.create({
@@ -172,10 +172,7 @@ async function fetchFromProxy(url: string, cache: any, cacheKey: string) {
     }
 
     // Proceed with the network request if no cached response is found
-    const response = await axiosInstance.get(url);
-
-    console.log(response)
-    // Adjust based on how the proxy expects to receive the original URL
+    const response = await axiosInstance.get(url); // Adjust based on how the proxy expects to receive the original URL
 
     // After obtaining the response, verify it for errors or empty data as before
     if (
@@ -227,7 +224,6 @@ export async function fetchAdvancedSearch(
     queryParams.set('genres', JSON.stringify(options.genres));
   }
   const url = `${BASE_URL}meta/anilist/advanced-search?${queryParams.toString()}`;
-  console.log(url)
   const cacheKey = generateCacheKey('advancedSearch', queryParams.toString());
 
   return fetchFromProxy(url, advancedSearchCache, cacheKey);
@@ -240,7 +236,6 @@ export async function fetchAnimeData(
 ) {
   const params = new URLSearchParams({ provider });
   const url = `${BASE_URL}meta/anilist/data/${animeId}?${params.toString()}`;
-  console.log(url)
   const cacheKey = generateCacheKey('animeData', animeId, provider);
 
   return fetchFromProxy(url, animeDataCache, cacheKey);
@@ -253,7 +248,6 @@ export async function fetchAnimeInfo(
 ) {
   const params = new URLSearchParams({ provider });
   const url = `${BASE_URL}meta/anilist/info/${animeId}?${params.toString()}`;
-  console.log(url)
   const cacheKey = generateCacheKey('animeInfo', animeId, provider);
 
   return fetchFromProxy(url, animeInfoCache, cacheKey);
@@ -282,7 +276,6 @@ async function fetchList(
       perPage.toString(),
     );
     url = `${BASE_URL}meta/anilist/${type.toLowerCase()}`;
-    
 
     if (type === 'TopRated') {
       options = {
@@ -290,17 +283,14 @@ async function fetchList(
         sort: ['["SCORE_DESC"]'],
       };
       url = `${BASE_URL}meta/anilist/advanced-search?type=${options.type}&sort=${options.sort}&`;
-    }
-    if (type === 'Popular') {
+    } else if (type === 'Popular') {
       options = {
         type: 'ANIME',
         sort: ['["POPULARITY_DESC"]'],
       };
       url = `${BASE_URL}meta/anilist/advanced-search?type=${options.type}&sort=${options.sort}&`;
-    }
-    if (type === 'Upcoming') {
-      const season = getSeason(true); // This will set the season based on the current month
-      const year = new Date().getFullYear();
+    } else if (type === 'Upcoming') {
+      const season = getNextSeason(); // This will set the season based on the current month
       options = {
         type: 'ANIME',
         season: season,
@@ -310,8 +300,7 @@ async function fetchList(
       };
       url = `${BASE_URL}meta/anilist/advanced-search?type=${options.type}&status=${options.status}&sort=${options.sort}&season=${options.season}&year=${options.year}&`;
     } else if (type === 'TopAiring') {
-      const season = getSeason(false); // This will set the season based on the current month
-      const year = new Date().getFullYear();
+      const season = getCurrentSeason(); // This will set the season based on the current month
       options = {
         type: 'ANIME',
         season: season,

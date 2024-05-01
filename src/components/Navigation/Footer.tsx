@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { FaDiscord, FaTwitter, FaGithub , FaInstagram} from 'react-icons/fa';
+import { FaDiscord, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { year } from '../../hooks/useTIme';
 
 const PageWrapper = styled.div`
   margin-top: 2rem;
@@ -119,7 +120,7 @@ export function Footer() {
             <FooterLink to='/about' title='About Us'>
               About
             </FooterLink>
-            <FooterLink to='/privacy&policy' title='Privacy Policy and Terms of Service'>
+            <FooterLink to='/pptos' title='Privacy Policy and Terms of Service'>
               Privacy & ToS
             </FooterLink>
             <FooterLink to='/' title='Donate to Us'>
@@ -129,8 +130,8 @@ export function Footer() {
         </FooterBaseContainer>
         <FooterBaseContainer aria-label='Sub Footer' $isSub={true}>
           <Text as='p' $isSub={true}>
-            &copy; {new Date().getFullYear()} Scrive.vercel.to | Website Made by{' '}
-            <strong>Rawknee.69</strong>
+            &copy; {year}{' '}
+            © Scrive.vercel.app. All rights reserved.
           </Text>
           <nav aria-label='Social Links'>
             <SocialIconsWrapper>
@@ -146,23 +147,17 @@ export function Footer() {
                   label: 'Discord',
                 },
                 {
-                  href: 'https://github.com/Rawknee-69/',
-                  Icon: FaGithub,
-                  label: 'GitHub',
-                },
-                {
                   href: 'https://instagram.com/Rawknee.69/',
                   Icon: FaInstagram,
                   label: 'Instagram',
                 },
-
               ].map(({ href, Icon, label }) => (
                 <ShareButton
                   key={href}
                   href={href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`Scrive.to on ${label}`}
+                  aria-label={`Scrive on ${label}`}
                 >
                   <Icon aria-hidden='true' />
                 </ShareButton>

@@ -11,15 +11,15 @@ import {
   type MediaPlayerInstance,
 } from '@vidstack/react';
 import styled from 'styled-components';
-import { fetchSkipTimes, fetchAnimeStreamingLinks } from '../../../index';
+import { fetchSkipTimes, fetchAnimeStreamingLinks, useSettings } from '../../../index';
 import {
   DefaultAudioLayout,
   defaultLayoutIcons,
   DefaultVideoLayout,
 } from '@vidstack/react/player/layouts/default';
 import {
-  TbPlayerTrackPrevFilled,
-  TbPlayerTrackNextFilled,
+  TbPlayerTrackPrev,
+  TbPlayerTrackNext,
 } from 'react-icons/tb';
 import { FaCheck } from 'react-icons/fa6';
 import { RiCheckboxBlankFill } from 'react-icons/ri';
@@ -96,39 +96,22 @@ export function Player({
   const [src, setSrc] = useState<string>('');
   const [vttUrl, setVttUrl] = useState<string>('');
   const [currentTime, setCurrentTime] = useState<number>(0);
-  const [autoPlay, setAutoPlay] = useState<boolean>(false);
-  const [autoNext, setAutoNext] = useState<boolean>(false);
-  const [autoSkip, setAutoSkip] = useState<boolean>(false);
   const [skipTimes, setSkipTimes] = useState<SkipTime[]>([]);
   const [totalDuration, setTotalDuration] = useState<number>(0);
   const [vttGenerated, setVttGenerated] = useState<boolean>(false);
-
   const episodeNumber = getEpisodeNumber(episodeId);
   const animeVideoTitle = animeTitle;
 
+  const { settings, setSettings } = useSettings();
+  const { autoPlay, autoNext, autoSkip } = settings;
+
   useEffect(() => {
-    const savedAutoPlay = localStorage.getItem('autoPlay') === 'true';
-    const savedAutoNext = localStorage.getItem('autoNext') === 'true';
-    const savedAutoSkip = localStorage.getItem('autoSkip') === 'true';
-
-    setAutoPlay(savedAutoPlay);
-    setAutoNext(savedAutoNext);
-    setAutoSkip(savedAutoSkip);
-
-    const allPlaybackInfo = JSON.parse(
-      localStorage.getItem('all_episode_times') || '{}',
-    );
-    if (allPlaybackInfo[episodeId]) {
-      const { currentTime } = allPlaybackInfo[episodeId];
-      setCurrentTime(parseFloat(currentTime));
-    }
+    setCurrentTime(parseFloat(localStorage.getItem('currentTime') || '0'));
 
     fetchAndSetAnimeSource();
     fetchAndProcessSkipTimes();
     return () => {
-      if (vttUrl) {
-        URL.revokeObjectURL(vttUrl);
-      }
+      if (vttUrl) URL.revokeObjectURL(vttUrl);
     };
   }, [episodeId, malId, updateDownloadLink]);
 
@@ -286,20 +269,9 @@ export function Player({
     return parts[parts.length - 1];
   }
 
-  const toggleAutoPlay = () => {
-    setAutoPlay(!autoPlay);
-    localStorage.setItem('autoPlay', (!autoPlay).toString());
-  };
-
-  const toggleAutoNext = () => {
-    setAutoNext(!autoNext);
-    localStorage.setItem('autoNext', (!autoNext).toString());
-  };
-
-  const toggleAutoSkip = () => {
-    setAutoSkip(!autoSkip);
-    localStorage.setItem('autoSkip', (!autoSkip).toString());
-  };
+  const toggleAutoPlay = () => setSettings({ ...settings, autoPlay: !autoPlay });
+  const toggleAutoNext = () => setSettings({ ...settings, autoNext: !autoNext });
+  const toggleAutoSkip = () => setSettings({ ...settings, autoSkip: !autoSkip });
 
   const handlePlaybackEnded = async () => {
     if (!autoNext) return;
@@ -315,7 +287,7 @@ export function Player({
   };
 
   return (
-    <div style={{ animation: 'popInAnimation 0.25s ease-in-out' }}>
+    <div style={{ animation: 'popIn 0.25s ease-in-out' }}>
       <MediaPlayer
         className='player'
         title={`${animeVideoTitle} - Episode ${episodeNumber}`}
@@ -358,10 +330,10 @@ export function Player({
           {autoSkip ? <FaCheck /> : <RiCheckboxBlankFill />} Auto Skip
         </Button>
         <Button onClick={onPrevEpisode}>
-          <TbPlayerTrackPrevFilled /> Prev
+          <TbPlayerTrackPrev /> Prev
         </Button>
         <Button onClick={onNextEpisode}>
-          <TbPlayerTrackNextFilled /> Next
+          <TbPlayerTrackNext /> Next
         </Button>
         <Button onClick={toggleAutoNext}>
           {autoNext ? <FaCheck /> : <RiCheckboxBlankFill />} Auto Next
