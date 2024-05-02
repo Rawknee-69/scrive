@@ -46,7 +46,7 @@ const sections = [
     content: (
       <Paragraph>
         <strong>Data Collection</strong>: We collect minimal user data necessary
-        for the functioning of anifusion.in, such as account information and user
+        for the functioning of Scrive.vercel.app, such as account information and user
         preferences.
         <br></br>
         <br></br>
@@ -55,7 +55,7 @@ const sections = [
         third parties except as required by law.
         <br></br>
         <br></br>
-        <strong>Cookies and Tracking</strong>: anifusion.in uses cookies and similar
+        <strong>Cookies and Tracking</strong>: Scrive.vercel.app uses cookies and similar
         tracking technologies to enhance the user experience like caching video
         timestamps and tracking watched content.
         <br></br>
@@ -77,8 +77,8 @@ const sections = [
         <br></br>
         <strong>Contact Us</strong>: If you have any questions about these
         terms, please contact us at{' '}
-        <StyledLink href='mailto:support@anifusion.in'>
-          anifusion.in.
+        <StyledLink href='mailto:Rawknee.6069@gmail.com'>
+          Scrive.
         </StyledLink>
       </Paragraph>
     ),
@@ -87,12 +87,12 @@ const sections = [
     title: 'Terms of Service',
     content: (
       <Paragraph>
-        <strong>Acceptance of Terms</strong>: By using anifusion.in, you agree to
+        <strong>Acceptance of Terms</strong>: By using Scrive.vercel.app, you agree to
         these Terms of Service and acknowledge that they affect your legal
         rights and obligations.
         <br></br>
         <br></br>
-        <strong>Content</strong>: anifusion.in does not host video content but embeds
+        <strong>Content</strong>: Scrive.vercel.app does not host video content but embeds
         videos from various third-party sources. We are not responsible for the
         content, quality, or the policies of these external sites.
         <br></br>
@@ -108,7 +108,7 @@ const sections = [
         <br></br>
         <br></br>
         <strong>Intellectual Property</strong>: The intellectual property rights
-        of the embedded videos remain with their respective owners. anifusion.in
+        of the embedded videos remain with their respective owners. Scrive.vercel.app
         respects these rights and does not claim ownership of this content.
         <br></br>
         <br></br>
@@ -128,7 +128,7 @@ const sections = [
 function PolicyTerms() {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = 'Policy & Terms | Anifusion'; // Set the title when the component mounts
+    document.title = 'Policy & Terms | Scrive'; // Set the title when the component mounts
     return () => {
       // Reset the title to the previous one when the component unmounts
       document.title = previousTitle;

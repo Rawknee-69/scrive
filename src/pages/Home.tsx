@@ -211,7 +211,7 @@ const Home = () => {
   }, [itemsCount]);
 
   useEffect(() => {
-    document.title = `Anifusion | Watch Anime Online, Free Anime Streaming`;
+    document.title = `Scrive | Watch Anime Online, Free Anime Streaming`;
   }, [activeTab]);
 
   useEffect(() => {
