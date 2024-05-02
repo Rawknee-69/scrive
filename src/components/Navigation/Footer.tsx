@@ -131,7 +131,7 @@ export function Footer() {
         <FooterBaseContainer aria-label='Sub Footer' $isSub={true}>
           <Text as='p' $isSub={true}>
             &copy; {year}{' '}
-            © Scrive.vercel.app. All rights reserved.
+            anifusion.in. All rights reserved.
           </Text>
           <nav aria-label='Social Links'>
             <SocialIconsWrapper>
@@ -157,7 +157,7 @@ export function Footer() {
                   href={href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`Scrive on ${label}`}
+                  aria-label={`anifusion.in on ${label}`}
                 >
                   <Icon aria-hidden='true' />
                 </ShareButton>

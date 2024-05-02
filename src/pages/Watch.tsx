@@ -619,7 +619,7 @@ const Watch: React.FC = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [episodes, currentEpisode, handleEpisodeSelect, lastKeypressTime]);
 
-  // TODO SET PAGE TITLE TO Scrive + ANIME TITLE
+  // TODO SET PAGE TITLE TO anifusion.in + ANIME TITLE
   useEffect(() => {
     if (animeInfo && animeInfo.title) {
       document.title =
@@ -628,7 +628,7 @@ const Watch: React.FC = () => {
           animeInfo.title.romaji ||
           animeInfo.title.romaji ||
           '') +
-        ' | Scrive';
+        ' | Anifusion';
     }
   }, [animeInfo]);
 

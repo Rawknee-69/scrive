@@ -1,5 +1,5 @@
 {
-  "name": "miruro_no_kuon",
+  "name": "anifusion",
   "private": true,
   "version": "0.4.3",
   "type": "module",
@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "vite build && bun run ./server/server.ts",
-    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -20,7 +19,6 @@
     "@types/express": "^4.17.21",
     "@types/lodash": "^4.17.0",
     "@types/uuid": "^9.0.8",
-    "@vercel/analytics": "^1.2.2",
     "@vidstack/react": "next",
     "axios": "^1.6.8",
     "body-parser": "^1.20.2",
