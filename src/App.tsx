@@ -25,6 +25,7 @@ import {
   SettingsProvider,
 } from './index';
 import { register } from 'swiper/element/bundle';
+import { Analytics } from '@vercel/analytics/react';
 import { AuthProvider } from './client/useAuth';
 import ReactGA from 'react-ga4';
 
@@ -35,7 +36,9 @@ function App() {
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
   useEffect(() => {
-    ReactGA.initialize(measurementId);
+    if (measurementId) {
+      ReactGA.initialize(measurementId);
+    }
   }, [measurementId]);
 
   return (
@@ -71,6 +74,7 @@ function App() {
           </ThemeProvider>
         </AuthProvider>
       </Router>
+      <Analytics />
     </ApolloClientProvider>
   );
 }

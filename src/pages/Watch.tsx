@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaBell } from 'react-icons/fa';
 import styled from 'styled-components';
-import Image404URL from '/src/assets/404.webp';
+import Image404URL from '/src/assets/404.gif';
 import {
   EpisodeList,
   Player,
@@ -619,7 +619,7 @@ const Watch: React.FC = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [episodes, currentEpisode, handleEpisodeSelect, lastKeypressTime]);
 
-  // TODO SET PAGE TITLE TO Scrive.in + ANIME TITLE
+  // TODO SET PAGE TITLE TO Anifusion + ANIME TITLE
   useEffect(() => {
     if (animeInfo && animeInfo.title) {
       document.title =
@@ -628,7 +628,7 @@ const Watch: React.FC = () => {
           animeInfo.title.romaji ||
           animeInfo.title.romaji ||
           '') +
-        ' | Scrive';
+        ' | Anifusion';
     }
   }, [animeInfo]);
 

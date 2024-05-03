@@ -455,11 +455,11 @@ export const Navbar = () => {
         <NavbarWrapper>
           <TopContainer>
             <LogoImg
-              title='Scrive'
+              title='Anifusion.in'
               to='/home'
               onClick={() => window.scrollTo(0, 0)}
             >
-              グレモリーの家
+               グレモリーの家
             </LogoImg>
 
             {/* Render InputContainer within the navbar for screens larger than 500px */}

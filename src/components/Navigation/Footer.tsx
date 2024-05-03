@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaDiscord, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {  FaDiscord, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { year } from '../../hooks/useTIme';
 
@@ -131,7 +131,7 @@ export function Footer() {
         <FooterBaseContainer aria-label='Sub Footer' $isSub={true}>
           <Text as='p' $isSub={true}>
             &copy; {year}{' '}
-            Scrive.vercel.app.in. All rights reserved.
+            anifusion.in. All rights reserved.
           </Text>
           <nav aria-label='Social Links'>
             <SocialIconsWrapper>
@@ -157,7 +157,7 @@ export function Footer() {
                   href={href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`Scrive.vercel.app.in on ${label}`}
+                  aria-label={`Anifusion on ${label}`}
                 >
                   <Icon aria-hidden='true' />
                 </ShareButton>

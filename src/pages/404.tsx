@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Image404URL from '/src/assets/404.webp';
+import Image404URL from '/src/assets/404.gif';
 
 // Styled component for Centered Content
 const CenteredContent = styled.div`

@@ -40,17 +40,17 @@ const MainContent = styled.div`
 const sections = [
   {
     title: 'About',
-    title2: "What's Scrive.in?",
+    title2: "What's Anifusion?",
     content: (
       <Paragraph>
-        Scrive.in is an anime streaming site where you can watch anime online in HD
+        Anifusion is an anime streaming site where you can watch anime online in HD
         quality with English subtitles or dubbing. You can also download any
         anime you want without registration.
       </Paragraph>
     ),
   },
   {
-    title2: 'Is Scrive.in safe?',
+    title2: 'Is Anifusion safe?',
     content: (
       <Paragraph>
         Yes. We started this site to improve UX and are committed to keeping our
@@ -61,7 +61,7 @@ const sections = [
     ),
   },
   {
-    title2: 'Why Scrive.in?',
+    title2: 'Why Anifusion?',
     content: (
       <>
         <Paragraph>
@@ -102,7 +102,7 @@ const sections = [
           <strong>
             <FaCheckCircle /> Device Compatibility:
           </strong>{' '}
-          Scrive.in works seamlessly on both{' '}
+          Anifusion works seamlessly on both{' '}
           <Keyword>desktop and mobile devices</Keyword>.
         </Paragraph>
         <Paragraph>
@@ -119,7 +119,7 @@ const sections = [
 function About() {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = 'About | Scrive'; // Set the title when the component mounts
+    document.title = 'About | Anifusion'; // Set the title when the component mounts
     return () => {
       // Reset the title to the previous one when the component unmounts
       document.title = previousTitle;

@@ -211,8 +211,8 @@ export const EpisodeList: React.FC<Props> = ({
   const episodeGridRef = useRef<HTMLDivElement>(null);
   const episodeRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
   const [interval, setInterval] = useState<[number, number]>([0, 99]);
-  const [/*isRowLayout*/, setIsRowLayout] = useState(true);
-  const [userLayoutPreference, /*setUserLayoutPreference*/] = useState<
+  const [isRowLayout, setIsRowLayout] = useState(true);
+  const [userLayoutPreference, setUserLayoutPreference] = useState<
     boolean | null
   >(null);
   const [searchTerm, setSearchTerm] = useState('');
