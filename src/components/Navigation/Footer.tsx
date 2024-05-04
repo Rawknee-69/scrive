@@ -131,7 +131,7 @@ export function Footer() {
         <FooterBaseContainer aria-label='Sub Footer' $isSub={true}>
           <Text as='p' $isSub={true}>
             &copy; {year}{' '}
-            anifusion.in. All rights reserved.
+            anifusion.in | All rights reserved.
           </Text>
           <nav aria-label='Social Links'>
             <SocialIconsWrapper>

@@ -77,7 +77,7 @@ const sections = [
         <br></br>
         <strong>Contact Us</strong>: If you have any questions about these
         terms, please contact us at{' '}
-        <StyledLink href='mailto:support@anifusion.in'>
+        <StyledLink href='mailto:mangato@anifusion.in'>
           Support Mail.
         </StyledLink>
       </Paragraph>
