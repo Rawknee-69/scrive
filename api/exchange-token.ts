@@ -1,8 +1,8 @@
 import axios from 'axios';
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { Request, Response } from 'express'; // Import Request and Response types from express
 
-export default async function exchangeAccessToken(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
+export default async function exchangeAccessToken(req: Request, res: Response) {
+  if (req.method!== 'POST') {
     res.status(405).send('Method Not Allowed');
     return;
   }
@@ -13,11 +13,11 @@ export default async function exchangeAccessToken(req: VercelRequest, res: Verce
   }
 
   const payload = {
-    client_id: process.env.VITE_CLIENT_ID,
-    client_secret: process.env.VITE_CLIENT_SECRET,
+    client_id: process.env.CLIENT_ID,
+    client_secret: process.env.CLIENT_SECRET,
     code,
     grant_type: 'authorization_code',
-    redirect_uri: process.env.VITE_REDIRECT_URI,
+    redirect_uri: process.env.REDIRECT_URI,
   };
 
   const url = 'https://anilist.co/api/v2/oauth/token';
@@ -35,23 +35,21 @@ export default async function exchangeAccessToken(req: VercelRequest, res: Verce
     } else {
       throw new Error('Access token not found in the response');
     }
-  } catch (error: unknown) {
-    // First, check if it's an instance of Error
+  } catch (error) {
+    // Handling errors
+    let errorMessage = 'Failed to exchange token';
+    let errorDetails = 'An unknown error occurred';
+
     if (error instanceof Error) {
-      // Now you can safely read the message property
-      const message = error.message;
-      // If it's an axios error, it may have a response object
-      const details = axios.isAxiosError(error) && error.response ? error.response.data : message;
-      res.status(500).json({
-        error: 'Failed to exchange token',
-        details,
-      });
-    } else {
-      // If it's not an Error object, handle it as a generic error
-      res.status(500).json({
-        error: 'Failed to exchange token',
-        details: 'An unknown error occurred',
-      });
+      errorMessage = error.message;
+      if (axios.isAxiosError(error) && error.response) {
+        errorDetails = error.response.data;
+      }
     }
+
+    res.status(500).json({
+      error: errorMessage,
+      details: errorDetails,
+    });
   }
 }

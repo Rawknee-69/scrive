@@ -25,7 +25,6 @@ import {
   SettingsProvider,
 } from './index';
 import { register } from 'swiper/element/bundle';
-import { Analytics } from '@vercel/analytics/react';
 import { AuthProvider } from './client/useAuth';
 import ReactGA from 'react-ga4';
 
@@ -74,7 +73,6 @@ function App() {
           </ThemeProvider>
         </AuthProvider>
       </Router>
-      <Analytics />
     </ApolloClientProvider>
   );
 }

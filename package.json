@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite build && bun run ./server/server.ts",
+    "start": "vite build &&  run ./server/server.ts",
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write ."
   },
